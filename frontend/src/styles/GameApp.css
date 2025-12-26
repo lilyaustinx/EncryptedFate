@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+:root {
+  font-family: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
+  color: #0b1021;
+  background-color: #f5f7fb;
+}
+
+.page-shell {
+  min-height: 100vh;
+  background: radial-gradient(circle at 10% 20%, rgba(78, 139, 255, 0.12) 0, transparent 35%),
+    radial-gradient(circle at 80% 0%, rgba(177, 111, 255, 0.14) 0, transparent 28%),
+    linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+  padding: 0 1.25rem 3rem;
+}
+
+.game-app {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(236, 243, 255, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 20px 60px rgba(79, 70, 229, 0.12);
+  border-radius: 24px;
+  padding: 1.75rem;
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.eyebrow {
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: #5b21b6;
+  margin: 0 0 0.4rem;
+}
+
+.hero-title {
+  font-size: 2rem;
+  margin: 0.1rem 0 0.75rem;
+  line-height: 1.2;
+}
+
+.hero-copy {
+  margin: 0 0 1rem;
+  color: #4b5563;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.primary-button,
+.ghost-button {
+  padding: 0.85rem 1.25rem;
+  border-radius: 14px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.primary-button {
+  background: linear-gradient(135deg, #7c3aed, #22d3ee);
+  color: #0b1021;
+  box-shadow: 0 12px 30px rgba(124, 58, 237, 0.25);
+}
+
+.primary-button:disabled,
+.ghost-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none;
+  box-shadow: none;
+}
+
+.primary-button:hover:not(:disabled),
+.ghost-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.ghost-button {
+  background: #0b1021;
+  color: #f9fafb;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.feedback {
+  margin-top: 0.75rem;
+  color: #0ea5e9;
+  font-weight: 600;
+}
+
+.feedback.warning {
+  color: #dc2626;
+}
+
+.hero-panel {
+  background: rgba(10, 14, 40, 0.85);
+  color: #e5e7eb;
+  border-radius: 18px;
+  padding: 1.25rem;
+  display: grid;
+  gap: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.stat {
+  padding: 0.75rem 1rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.stat-label {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+
+.stat-value {
+  margin: 0.25rem 0 0.15rem;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #f9fafb;
+}
+
+.stat-mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  margin: 0;
+  color: #a5b4fc;
+  word-break: break-all;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.step-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.1rem;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+.step-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.step-kicker {
+  margin: 0;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6366f1;
+  font-weight: 700;
+}
+
+.step-title {
+  margin: 0.15rem 0 0;
+  font-size: 1.05rem;
+}
+
+.status-pill {
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.status-locked {
+  background: #ecfdf3;
+  color: #15803d;
+}
+
+.status-active {
+  background: #eef2ff;
+  color: #4338ca;
+}
+
+.status-idle {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.step-copy {
+  color: #4b5563;
+  margin: 0.4rem 0 0.75rem;
+}
+
+.option-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.option-button {
+  flex: 1;
+  padding: 0.7rem 0.9rem;
+  border-radius: 12px;
+  font-weight: 700;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.option-live {
+  background: linear-gradient(135deg, #e0e7ff, #cffafe);
+  color: #0b1021;
+}
+
+.option-muted {
+  background: #f8fafc;
+  color: #9ca3af;
+}
+
+.option-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.15);
+}
+
+.option-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none;
+  box-shadow: none;
+}
+
+.cipherline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-top: 0.65rem;
+  border-top: 1px dashed #e5e7eb;
+}
+
+.cipher-label {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.cipher-value {
+  margin: 0.15rem 0 0;
+  font-family: 'JetBrains Mono', monospace;
+  color: #0f172a;
+  word-break: break-all;
+}
+
+.decoded-chip {
+  background: #0b1021;
+  color: #f8fafc;
+  border-radius: 12px;
+  padding: 0.55rem 0.85rem;
+  text-align: right;
+  min-width: 120px;
+}
+
+.decoded-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #cbd5e1;
+}
+
+.decoded-value {
+  display: block;
+  font-weight: 800;
+  margin-top: 0.1rem;
+}
+
+.panel {
+  background: white;
+  border-radius: 16px;
+  padding: 1.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.section-title {
+  margin: 0.25rem 0 0.4rem;
+  font-size: 1.2rem;
+}
+
+.panel-copy {
+  margin: 0 0 1rem;
+  color: #4b5563;
+}
+
+.cipher-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.75rem;
+}
+
+.cipher-card {
+  padding: 0.85rem;
+  border-radius: 12px;
+  border: 1px dashed #e5e7eb;
+  background: #f8fafc;
+}
+
+@media (max-width: 900px) {
+  .hero-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-shell {
+    padding: 0 1rem 2rem;
+  }
+
+  .option-row {
+    flex-direction: column;
+  }
+
+  .cipherline {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
